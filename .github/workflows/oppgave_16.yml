@@ -1,4 +1,5 @@
 name: oppgave 16
+
 on:
   - push
   - workflow_dispatch
@@ -8,6 +9,7 @@ jobs:
     defaults:
       run:
         shell: pwsh
+        working-directory: ${{ github.workspace }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -16,8 +18,8 @@ jobs:
       - name: Run Blackjack script file
         run: ./src/oppgave_10.ps1
 
-- name: Login via Az module
-  uses: azure/login@v1
-  with:
-    creds: ${{ secrets.Oppgave_16 }}
-    enable-AzPSSession: true
+      - name: Login via Az module
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.Oppgave_16 }}
+          enable-AzPSSession: true
