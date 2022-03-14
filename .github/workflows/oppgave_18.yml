@@ -23,7 +23,7 @@ jobs:
       - name: 'Run cleanup script'
         uses: azure/powershell@v1
         with:
-          inlineScript: ./funcApp/cleanup.ps1 -$resourceGroupName 'Kent-workshop-p6yrk64yhi5po'
+          inlineScript: ./funcApp/cleanup.ps1 -resourceGroupName 'Kent-workshop-p6yrk64yhi5po'
           azPSVersion: "latest"
 
       - name: 'logout from azure'
